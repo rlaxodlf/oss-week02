@@ -1,4 +1,4 @@
-# oss-week02 — Node, JavaScript, npm
+# 컴퓨터정보공학부 김태일
 
 Week 2 hands-on for *Open Source Software Design and Lab* (Kwangwoon Univ., 2026).
 
