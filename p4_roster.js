@@ -20,14 +20,22 @@ const students = [
 //     expected: 80 or more: [ 'Yuna', 'Minho', 'Hana', 'Soyeon', 'Dohyun', 'Seoyeon' ]
 // TODO
 // console.log("80 or more:", ...);
+const over80 = students.filter(n=>n.score>=80).map(n=>n.name);
+console.log("80 or more:", over80);
 
 // (b) Students per department, as an object.  (forEach + an empty object)
 //     expected: per dept: { CS: 5, EE: 3, ME: 2 }
 //     Hint: counts[s.dept] = (counts[s.dept] ?? 0) + 1;
 // TODO
 // console.log("per dept:", ...);
+const counts = {};
+students.forEach(n=>{counts[n.dept] = (counts[n.dept] ?? 0) + 1});
+console.log("per dept:", counts);
 
 // (c) Ranking by score, one line each: "1. Soyeon (CS) 97"
 //     Copy the array before sorting (students.slice()).
 //     sort() is destructive and (a) and (b) must still see the original order.
 // TODO
+const copied = students.slice();
+copied.sort((a,b)=>b.score-a.score);
+copied.forEach((n,i)=>{console.log(`${i+1}. ${n.name} (${n.dept}) ${n.score}`)});
